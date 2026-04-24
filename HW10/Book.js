@@ -6,57 +6,55 @@ export class Book {
     }
 
     get title() {
-    return this._title;
-}
+        return this._title;
+    }
 
     get author() {
-    return this._author;
-}
-   
-  
+        return this._author;
+    }
+
     get yearOfPublication() {
-    return this._yearOfPublication;
-}
-
-
-set yearOfPublication(yearOfPublication) {
-    if (yearOfPublication <=0 || yearOfPublication > 2026) {
-        console.log("Unavailable year")
-        return ;
+        return this._yearOfPublication;
     }
-    this._yearOfPublication = yearOfPublication;
-}
 
-set title(title) {
-    if (typeof value !== "string" || typeof value.trim() === "") {
-        console.log("Title should not be empty")
-        return ;
-    }
-    this._title = title;
-}
-
-set author(author) {
-    if (typeof value !== "string" || typeof value.trim() === "") {
-        console.log("Author field should not be empty")
-        return ;
-    }
-    this._author = author;
-}
-
-
-static findOldest(allBooks) {
-       return allBooks.reduce ((oldest, newest) => {
-        if (oldest.yearOfPublication < newest.yearOfPublication) {
-            return oldest;
-        } else {
-            return newest;
+    set yearOfPublication(yearOfPublication) {
+        if (yearOfPublication <= 0 || yearOfPublication > 2026) {
+            console.log("Unavailable year");
+            return;
         }
-       }, allBooks [0]);
+        this._yearOfPublication = yearOfPublication;
     }
 
+    set title(title) {
+        if (typeof title !== "string" || title.trim() === "") {
+            console.log("Title should not be empty");
+            return;
+        }
+        this._title = title;
+    }
 
-    printInfo () {
-    console.log(`The "${this.title}" book was writen by ${this.author} and publicated in ${this.yearOfPublication} year`);
-    return this;
-}
+    set author(author) {
+        if (typeof author !== "string" || author.trim() === "") {
+            console.log("Author field should not be empty");
+            return;
+        }
+        this._author = author;
+    }
+
+    static findOldest(allBooks) {
+        return allBooks.reduce((oldest, newest) => {
+            if (oldest.yearOfPublication < newest.yearOfPublication) {
+                return oldest;
+            } else {
+                return newest;
+            }
+        }, allBooks[0]);
+    }
+
+    printInfo() {
+        console.log(
+            `The "${this.title}" book was writen by ${this.author} and publicated in ${this.yearOfPublication} year`
+        );
+        return this;
+    }
 }

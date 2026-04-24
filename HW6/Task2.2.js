@@ -8,7 +8,6 @@
 
 // console.log(checkAge(25));
 
-
 // const arr = [1, 2, 3, 4, 5];
 
 // const result = arr.map((element, index) => {
@@ -17,7 +16,6 @@
 
 // console.log(arr);
 // console.log(result);
-
 
 // const arr = [1, 2, 3, 4, 5];
 // const arr2 = [6, 7, 8, 9, 10];
@@ -32,11 +30,11 @@
 // console.log(sorteredList);
 
 const users = [
-    {firstName: 'Vlada', email: 'vladaM@gmail.com', age: 10}, 
-    {firstName: 'Tatiana', email: 'TanyB@gmail.com', age: 38}, 
-    {firstName: 'Dasha', email: 'DashaM@gmail.com', age: 36}
+    { firstName: "Vlada", email: "vladaM@gmail.com", age: 10 },
+    { firstName: "Tatiana", email: "TanyB@gmail.com", age: 38 },
+    { firstName: "Dasha", email: "DashaM@gmail.com", age: 36 },
 ];
 for (const user of users) {
-   let {firstName, email, age} = user;
-console.log(firstName, email, age)
-};
+    let { firstName, email, age } = user;
+    console.log(firstName, email, age);
+}
